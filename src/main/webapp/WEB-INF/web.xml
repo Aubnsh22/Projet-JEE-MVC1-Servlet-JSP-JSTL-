@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>GestionDesProduitsMVC1</display-name>
+  
+  <welcome-file-list>
+    <welcome-file>listProduits</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  
+  
+  <!-- liste -->
+  <servlet>
+  
+  <servlet-name>list</servlet-name>
+  <servlet-class>web.ListProduitServlet</servlet-class> 
+ 
+  </servlet>
+  
+  <servlet-mapping>
+        <servlet-name>list</servlet-name>
+        <url-pattern>/listProduits</url-pattern> 
+  </servlet-mapping>
+  
+  <!-- add -->
+  
+  <servlet>
+        <servlet-name>add</servlet-name>
+        <servlet-class>web.AddProduitServlet</servlet-class>
+  </servlet>
+    
+  
+   <servlet-mapping>
+        <servlet-name>add</servlet-name>
+        <url-pattern>/addProduit</url-pattern>
+   </servlet-mapping>
+    
+   
+   <!-- delete -->
+   <servlet>
+        <servlet-name>delete</servlet-name>
+        <servlet-class>web.DeleteProduitServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>delete</servlet-name>
+        <url-pattern>/deleteProduit</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Modify -->
+    <servlet>
+        <servlet-name>edit</servlet-name>
+        <servlet-class>web.EditProduitServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>edit</servlet-name>
+        <url-pattern>/editProduit</url-pattern>
+    </servlet-mapping>
+    
+    <!-- UPDATE -->
+    <servlet>
+        <servlet-name>update</servlet-name>
+        <servlet-class>web.UpdateProduitServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>update</servlet-name>
+        <url-pattern>/updateProduit</url-pattern>
+    </servlet-mapping>
+
+</web-app>

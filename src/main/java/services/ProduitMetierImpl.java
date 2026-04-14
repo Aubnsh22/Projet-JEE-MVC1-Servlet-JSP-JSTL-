@@ -1,0 +1,64 @@
+package services;
+
+import java.util.List;
+import dao.Produit;
+import dao.ProduitDAO;
+import dao.ProduitImpl;
+
+
+public class ProduitMetierImpl implements ProduitMetier{
+	
+	private static ProduitMetierImpl instance;
+	
+	private ProduitDAO dao;
+	
+	private ProduitMetierImpl () {
+		dao = new ProduitImpl ();
+		((ProduitImpl) dao ).init();
+		
+	}
+	
+	public static ProduitMetierImpl getinstance() {
+		if(instance == null ) {
+			instance = new ProduitMetierImpl();
+			
+		}
+		return instance;
+	}
+		
+		@Override
+		public void addProduit(Produit p) {
+			dao.addProduit(p);
+		}
+		
+		@Override
+		public void deleteProduit(Long Id) {
+			dao.deleteProduit(Id);
+		}
+		
+		@Override
+		public List<Produit> getAllProduits(){
+			return dao.getAllProducts();
+		}
+		@Override
+		public Produit getProduitById(Long id) {
+			return dao.getProduitById(id);
+		}
+		@Override
+		public void updateProduit(Produit p) {
+			dao.updateProduit(p);
+		}
+		
+		
+		
+			
+		
+		
+		
+	
+	
+	
+	
+	
+    
+}
